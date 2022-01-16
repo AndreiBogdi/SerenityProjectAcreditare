@@ -26,6 +26,7 @@ public class SearchSteps extends BaseSteps {
     public void pressSort(){
         searchResultsPage.clickonSort();
         searchResultsPage.clickonSortPrice();
+        Assert.assertTrue(searchResultsPage.SortByPrice());
 
     }
 }

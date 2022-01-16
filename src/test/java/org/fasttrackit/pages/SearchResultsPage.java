@@ -1,7 +1,6 @@
 package org.fasttrackit.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 
@@ -20,6 +19,14 @@ public class SearchResultsPage extends BasePage {
 
     public void clickonSort(){clickOn(Sort);}
     public void clickonSortPrice(){clickOn(SortPrice);}
+
+    public boolean SortByPrice(){
+        waitFor(listOfProducts.get(0));
+        for(WebElementFacade element : listOfProducts){
+            //if(element.findElement(By.cssSelector("")) < element.findElement(By.cssSelector("")));
+        }
+        return true;
+    }
 
     public boolean openProduct(String name){
         waitFor(listOfProducts.get(0));
