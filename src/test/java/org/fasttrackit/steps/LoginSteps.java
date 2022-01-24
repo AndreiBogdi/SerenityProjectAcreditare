@@ -1,25 +1,31 @@
 package org.fasttrackit.steps;
 
 import net.thucydides.core.annotations.Step;
+import org.fasttrackit.pages.HomePage;
+import org.fasttrackit.pages.MyAccountPage;
+import org.junit.Assert;
 
 public class LoginSteps extends BaseSteps {
 
+    private HomePage homePage;
+    private MyAccountPage myAccountPage;
+
     @Step
-    public void navigateToLoginPage(){
+    public void navigateToHomePage(){homePage.open();}
+
+    @Step
+    public void navigateToMyAccountPage(){
         homePage.clickAccountLink();
-        homePage.clickLoginLink();
     }
 
     @Step
-    public void enterCredentials(String email, String pass){
-        loginPage.setEmailField(email);
-        loginPage.setPasswordField(pass);
-    }
+    public void enterCredentials(String username, String pass){
+        myAccountPage.setEmailFieldLogIn(username);
+        myAccountPage.setPasswordFieldLogIn(pass);
 
-    @Step
-    public void clickLogin(){
-        loginPage.clickLoginButton();
     }
+    @Step
+    public void ClickLogIn() {myAccountPage.clickLogInButton();}
 
     @Step
     public void checkUserIsLoggedIn(String userName){
@@ -27,10 +33,8 @@ public class LoginSteps extends BaseSteps {
     }
 
     @Step
-    public void doLogin(String user, String pass){
-        navigateToLoginPage();
-        enterCredentials(user,pass);
-        clickLogin();
+    public void LoggedIn(String userName){
+        Assert.assertTrue("failed",myAccountPage.checkUserLoggedIn("sasda"));
     }
 
 }

@@ -5,8 +5,8 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.steps.CartSteps;
 import org.fasttrackit.steps.LoginSteps;
-import org.fasttrackit.steps.SearchSteps;
 import org.fasttrackit.utils.EnvConstants;
+import org.fasttrackit.steps.*;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -25,8 +25,11 @@ public class BaseTest {
 
     @Steps
     protected LoginSteps loginSteps;
+
     @Steps
-    protected SearchSteps searchSteps;
+    protected RegisterSteps registerSteps;
+
+
     @Steps
     protected CartSteps cartSteps;
 }
