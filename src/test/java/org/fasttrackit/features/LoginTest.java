@@ -19,6 +19,7 @@ public class LoginTest extends BaseTest{
         loginSteps.navigateToMyAccountPage();
         loginSteps.enterCredentials("sasda@yahoo.com","dsaa");
         loginSteps.ClickLogIn();
+        loginSteps.LoggedIn("sasda");
     }
 
 
